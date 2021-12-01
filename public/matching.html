@@ -24,12 +24,6 @@
   </table>
   <div id="game"></div>
   
-  <script src="assets/js/main.js"></script>
-  <script>
-      window.onload = function() {
-        start();
-      };
-  </script>
   <script type="module">
     // Import the functions you need from the SDKs you need
     import { initializeApp } from "https://www.gstatic.com/firebasejs/9.5.0/firebase-app.js";
@@ -48,7 +42,13 @@
     // Initialize Firebase
     const app = initializeApp(firebaseConfig);
   </script>
+  <script src="assets/js/main.js"></script>
   <script src="assets/js/firebase.js"></script>
+  <script>
+    window.onload = function() {
+      start();
+    };
+</script>
 </body>
 
 </html>

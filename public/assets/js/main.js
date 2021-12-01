@@ -162,6 +162,8 @@ function start() {
 function gameOver() {
     // This cancels the setInterval, so the updateTimer stops getting called
     clearInterval(timer);
+    //Redirect to results page
+    location.href = "results.html";
     // Send score to the database
     console.log(matches);
 }
