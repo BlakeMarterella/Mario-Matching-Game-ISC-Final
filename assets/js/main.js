@@ -156,7 +156,6 @@ function updateTimer() {
 // The button has an on-click event handler that calls this
 function start() {
   timer = setInterval(updateTimer, 1000);
-  console.log("start");
   updateTimer();
 }
 
