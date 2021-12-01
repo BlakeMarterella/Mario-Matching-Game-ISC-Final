@@ -18,14 +18,18 @@
       <td colspan = "2" class = "time" id = "time">Time</td>
     </tr>
     <tr>
-      <td id = "score">Score:</br>0</td>
+      <td id = "matches">Matches:</br>0</td>
       <td id = "accuracy">Accuracy:</br>0.0%</td>
     </tr>
   </table>
   <div id="game"></div>
 
   <script src="assets/js/main.js"></script>
-  <script src="assets/js/timer.js"></script>
+  <script>
+      window.onload = function() {
+        start();
+      };
+  </script>
 </body>
 
 </html>

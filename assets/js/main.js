@@ -38,9 +38,8 @@ var secondGuess = '';
 var count = 0;
 var previousTarget = null;
 var delay = 600;
-var correct = 0;
 var totalGuesses = 0;
-var score = 0;
+var matches = 0;
 
 var game = document.getElementById('game');
 var grid = document.createElement('section');
@@ -108,12 +107,12 @@ grid.addEventListener('click', function (event) {
 
     if (firstGuess && secondGuess) {
       if (firstGuess === secondGuess) {
-        correct++;
+        matches++;
         setTimeout(match, delay);
       }
       totalGuesses++;
       setTimeout(resetGuesses, delay);
-      console.log("correct:" + correct);
+      console.log("matches: " + matches);
       console.log("total guesses: " + totalGuesses);
     }
     previousTarget = clicked;
@@ -127,7 +126,7 @@ grid.addEventListener('click', function (event) {
 // Update score on screen
 // -----------------------
 function updateScore() {
-  document.getElementById("score").innerHTML = "Score:<br/>" + correct;
+  document.getElementById("matches").innerHTML = "Matches:<br/>" + matches;
 }
 
 function updateAccuracy() {
@@ -135,13 +134,35 @@ function updateAccuracy() {
     document.getElementById("accuracy").innerHTML = "Accuracy:<br/>0%";
   }
   else {
-    document.getElementById("accuracy").innerHTML = "Accuracy:<br/>" + (correct/totalGuesses * 100).toFixed(1) + "%";
+    document.getElementById("accuracy").innerHTML = "Accuracy:<br/>" + (matches/totalGuesses * 100).toFixed(1) + "%";
   }
 }
 
-// -----------------------
-// Start the game
-// -----------------------
-window.onload = function() {
-  start();
-};
+// 
+// Timer
+// 
+var timer; 
+var timeLeft = 30;
+
+function updateTimer() {
+  timeLeft = timeLeft - 1;
+  if(timeLeft >= 0)
+    document.getElementById("time").innerHTML = timeLeft;
+  else {
+    gameOver();
+  }
+}
+
+// The button has an on-click event handler that calls this
+function start() {
+  timer = setInterval(updateTimer, 1000);
+  console.log("start");
+  updateTimer();
+}
+
+function gameOver() {
+    // This cancels the setInterval, so the updateTimer stops getting called
+    clearInterval(timer);
+    // Send score to the database
+    console.log(score);
+  }
