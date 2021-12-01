@@ -13,19 +13,27 @@
 </head>
 
 <body>
-  <table class = "center">
-    <tr>
-      <td colspan = "2" class = "time" id = "time">Time</td>
-    </tr>
-    <tr>
-      <td id = "score">Score:</br>0</td>
-      <td id = "accuracy">Accuracy:</br>0.0%</td>
-    </tr>
-  </table>
-  <div id="game"></div>
+    <wrapper>
+        <h1>ISC Memory Game!</h1>
+        <p>
+            Test your memory skills by flipping over cards and matching
+            the correct characters.
+        </p>
+    </br>
+        <p>
+            Developed by: <a href="https://github.com/BlakeMarterella">Blake Marterella (2021)</a>
+            <br/>
+            Adapted from: <a href="https://github.com/taniarascia/memory">Tania Rascia (2017)<a>
+        </p>
+        <button type="button" id="start" class="GlobalCenter">Start</button>
+    </wrapper>
 
-  <script src="assets/js/main.js"></script>
-  <script src="assets/js/timer.js"></script>
+    <script src="assets/js/timer.js"></script>
+    <script type="text/javascript">
+        document.getElementById("start").onclick = function () {
+            location.href = "matching.html";
+        };
+    </script>
 </body>
 
 </html>
