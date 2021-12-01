@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  
+  <title>ISC Memory</title>
+
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="icon" type="image/png" href="assets/img/mushroom.png">
+</head>
+
+<body>
+  <table class = "center">
+    <tr>
+      <td colspan = "2" class = "time" id = "time">Time</td>
+    </tr>
+    <tr>
+      <td id = "matches">Matches:</br>0</td>
+      <td id = "accuracy">Accuracy:</br>0.0%</td>
+    </tr>
+  </table>
+  <div id="game"></div>
+  
+  <script src="assets/js/main.js"></script>
+  <script>
+      window.onload = function() {
+        start();
+      };
+  </script>
+  <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.5.0/firebase-app.js";
+    // TO   DO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyCty60HL2t5UVK_bxpTKJYe7Qr2S9p9xjk",
+      authDomain: "isc-mathcing-game.firebaseapp.com",
+      databaseURL: "https://isc-mathcing-game-default-rtdb.firebaseio.com",
+      projectId: "isc-mathcing-game",
+      storageBucket: "isc-mathcing-game.appspot.com",
+      messagingSenderId: "414403306402",
+      appId: "1:414403306402:web:f6dcf1e33a383a065f48fb"
+    };
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+  </script>
+  <script src="assets/js/firebase.js"></script>
+</body>
+
+</html>

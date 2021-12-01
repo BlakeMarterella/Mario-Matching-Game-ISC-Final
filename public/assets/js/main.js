@@ -163,5 +163,5 @@ function gameOver() {
     // This cancels the setInterval, so the updateTimer stops getting called
     clearInterval(timer);
     // Send score to the database
-    console.log(score);
-  }
+    console.log(matches);
+}
