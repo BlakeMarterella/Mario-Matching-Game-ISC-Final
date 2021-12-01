@@ -1,0 +1,137 @@
+@font-face { font-family: Mario; src: url('../font/mario.ttf');} 
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  color: white;
+  font-family: Mario;
+  margin: 20px 0;
+  /* background: #6589F9; */
+  background-image: url("../img/wallpaper.gif");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+wrapper {
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: column;
+  -webkit-flex-direction: column;
+  align-items: center;
+}
+
+button {
+  color: #e75a10;
+  font-family: Mario;
+  background-color: #FAB942;
+  text-align: center;
+  border: solid 3px #e75a10;
+  cursor: pointer;
+  font-size: 3em;
+  padding: 10px 10px;
+  margin-top: 20px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+table {
+  color: white;
+  font-size: 1.5em;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+td {
+  width: 10em;
+}
+
+h1 {
+  font-size: 3em;
+  text-align: center;
+}
+
+p {
+  width: 35em;
+  text-align: center;
+}
+
+a {
+  color: white;
+}
+
+.time {
+  font-size: 2em;
+}
+
+.center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.grid {
+  max-width: 960px;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.card {
+  position: relative;
+  -webkit-transition: all .3s linear;
+  -o-transition: all .3s linear;
+  transition: all .3s linear;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  margin: 5px;
+}
+
+.card,
+.back,
+.front {
+  width: 10vw;
+  height: 10vw;
+}
+
+.back,
+.front {
+  position: absolute;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+
+.front {
+  background: #FAB942 url('../img/question.gif') no-repeat center center / contain;
+  cursor: pointer;
+}
+
+.back {
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+  background-color: #6589F9;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.selected {
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+}
+
+.match .front {
+  background: #6589F9 !important;
+}
