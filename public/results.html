@@ -22,17 +22,18 @@
                 <th>Accuracy</th>
                 <th>Date</th>
             </tr>
-            <tr>
-                <td>1</td>
-                <td>12</td>
-                <td>56%</td>
-                <td>Sample Data</td>
-            </tr>
+            <tbody id="score"> </tbody> 
         </table>
         <button type="button" id="restart" class="GlobalCenter">Play Again</button>
     </wrapper>
 
-    <script src="assets/js/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-database.js"></script>
+
+
+    <script src="assets/js/results.js"></script>
     <script type="text/javascript">
         document.getElementById("restart").onclick = function () {
             location.href = "index.html";
