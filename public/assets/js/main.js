@@ -33,6 +33,8 @@ var gameGrid = cardsArray.concat(cardsArray).sort(function () {
   return 0.5 - Math.random();
 });
 
+
+
 var firstGuess = '';
 var secondGuess = '';
 var count = 0;
@@ -150,8 +152,10 @@ function updateTimer() {
     document.getElementById("time").innerHTML = timeLeft;
   else {
     gameOver();
+    console.log("hit")
   }
 }
+
 
 // The button has an on-click event handler that calls this
 function start() {
@@ -159,11 +163,41 @@ function start() {
   updateTimer();
 }
 
+const firebaseConfig = {
+  apiKey: "AIzaSyCty60HL2t5UVK_bxpTKJYe7Qr2S9p9xjk",
+  authDomain: "isc-mathcing-game.firebaseapp.com",
+  databaseURL: "https://isc-mathcing-game-default-rtdb.firebaseio.com",
+  projectId: "isc-mathcing-game",
+  storageBucket: "isc-mathcing-game.appspot.com",
+  messagingSenderId: "414403306402",
+  appId: "1:414403306402:web:f6dcf1e33a383a065f48fb"
+};
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+
+
 function gameOver() {
-    // This cancels the setInterval, so the updateTimer stops getting called
-    clearInterval(timer);
-    //Redirect to results page
-    location.href = "results.html";
-    // Send score to the database
-    console.log(matches);
+  // This cancels the setInterval, so the updateTimer stops getting called
+  clearInterval(timer);
+  //Redirect to results page
+  const dateAndTime = new Date()
+ 
+  var em = {
+      score: "" + matches,
+      accuracy: "" + (matches/totalGuesses * 100).toFixed(1),
+      date: dateAndTime.toLocaleString()
+  };
+
+  firebase.database().ref("Score").push(em).then((snapshot) => {
+      location.href = "results.html";
+
+  }).catch((error) => {
+      var errorCode = error.code;
+      var errorMessage = error.message; 
+      window.alert(errorMessage)
+      location.href = "results.html";
+
+  });
+
+  
 }
