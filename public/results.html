@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   
-  <title>ISC Memory</title>
+  <title>Memory Analysis</title>
 
   <link rel="stylesheet" href="assets/css/main.css">
   <link rel="icon" type="image/png" href="assets/img/mushroom.png">
@@ -18,9 +18,15 @@
         <p>
             You tried
         </p>
+        <button type="button" id="restart" class="GlobalCenter">Play Again</button>
     </wrapper>
 
     <script src="assets/js/firebase.js"></script>
+    <script type="text/javascript">
+        document.getElementById("restart").onclick = function () {
+            location.href = "index.html";
+        };
+    </script>
 </body>
 
 </html>
