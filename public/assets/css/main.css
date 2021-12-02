@@ -127,8 +127,8 @@ a {
   .card,
   .back,
   .front {
-    width: 85px;
-    height: 85px;
+    width: 90px;
+    height: 90px;
   }
 }
 
@@ -159,5 +159,5 @@ a {
 }
 
 .match .front {
-  background: #6589F9 !important;
+  background: #5c94fc !important;
 }

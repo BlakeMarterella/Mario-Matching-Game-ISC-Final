@@ -198,6 +198,4 @@ function gameOver() {
       location.href = "results.html";
 
   });
-
-  
 }
