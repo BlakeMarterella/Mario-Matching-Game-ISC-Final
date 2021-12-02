@@ -49,6 +49,10 @@ table {
   margin-bottom: 20px;
 }
 
+th {
+  font-size: 15px;
+}
+
 td {
   width: 8em;
 }
