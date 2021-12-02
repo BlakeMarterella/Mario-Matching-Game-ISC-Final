@@ -35,7 +35,7 @@ button {
   text-align: center;
   border: solid 3px #e75a10;
   cursor: pointer;
-  font-size: 3em;
+  font-size: 2em;
   padding: 10px 10px;
   margin-top: 20px;
   text-align: center;
@@ -44,13 +44,13 @@ button {
 
 table {
   color: white;
-  font-size: 1.5em;
+  font-size: 1em;
   text-align: center;
   margin-bottom: 20px;
 }
 
 td {
-  width: 10em;
+  width: 8em;
 }
 
 h1 {
@@ -60,7 +60,6 @@ h1 {
 
 p {
   text-align: center;
-
 }
 
 a {
@@ -148,7 +147,7 @@ a {
 .back {
   -webkit-transform: rotateY(180deg);
           transform: rotateY(180deg);
-  background-color: #6589F9;
+  background-color: #5c94fc;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center center;
