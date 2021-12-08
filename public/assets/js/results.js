@@ -14,14 +14,11 @@ const firebaseConfig = {
   document.getElementById("yourScore").innerHTML += "</br>Accuracy: " + localStorage.getItem("accuracy") + "%";
 
   var table = new Tabulator("#results", {
-    layout: "fitColumns", //fit columns to width of table
+    layout: "fitData", //fit columns to width of table
     responsiveLayout: "hide", //hide columns that dont fit on the table
     tooltips: true, //show tool tips on cells
-    addRowPos: "top", //when adding a new row, add it to the top of the table
-    history: true, //allow undo and redo actions on the table
     pagination: "local", //paginate the data
     paginationSize: 15, //allow 30 rows per page of data
-    movableColumns: true, //allow column order to be changed
     resizableRows: true, //allow row order to be changed
     initialSort: [ //set the initial sort order of the data
         {
@@ -33,17 +30,17 @@ const firebaseConfig = {
         {
             title: "Matches",
             field: "matches",
-            editor: "none"
+            widthGrow: 1
         },
         {
             title: "Accuracy",
             field: "accuracy",
-            editor: "none"
+            widthGrow: 1
         },
         {
             title: "Date",
             field: "date",
-            editor: "none"
+            widthGrow: 1
         },
     ],
 });
