@@ -15,10 +15,7 @@ const firebaseConfig = {
 
   var table = new Tabulator("#results", {
     placeholder:"Loading Data",
-    layout: "fitData", //fit columns to width of table
-    responsiveLayout: "hide", //hide columns that dont fit on the table
-    pagination: "local", //paginate the data
-    paginationSize: 15, //allow 30 rows per page of data
+    layout: "fitColumn", //fit columns to width of table
     resizableRows: true, //allow row order to be changed
     initialSort: [ //set the initial sort order of the data
         {
@@ -30,17 +27,17 @@ const firebaseConfig = {
         {
             title: "Matches",
             field: "matches",
-            width: 100,
+            width: 120,
         },
         {
             title: "Accuracy",
             field: "accuracy",
-            width: 100,
+            width: 140,
         },
         {
             title: "Date",
             field: "date",
-            width: 100,
+            width: 110,
         },
     ],
 });
