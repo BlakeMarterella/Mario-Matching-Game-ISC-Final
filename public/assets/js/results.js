@@ -42,19 +42,6 @@ const firebaseConfig = {
     ],
 });
 
-  function loadTableData(items) {
-    const table = document.getElementById("score");
-    items.forEach(item => {
-        let row = table.insertRow();
-        let matches = row.insertCell(0);
-        let accuracy = row.insertCell(1);
-        let date = row.insertCell(2);
-        matches.innerHTML = item.score;
-        accuracy.innerHTML = item.accuracy;
-        date.innerHTML = item.date;
-     });
-}
-
 
 var databaseRef = firebase.database().ref('Score');
 
