@@ -10,7 +10,40 @@ const firebaseConfig = {
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
 
-
+  var table = new Tabulator("#results", {
+    layout: "fitColumns", //fit columns to width of table
+    responsiveLayout: "hide", //hide columns that dont fit on the table
+    tooltips: true, //show tool tips on cells
+    addRowPos: "top", //when adding a new row, add it to the top of the table
+    history: true, //allow undo and redo actions on the table
+    pagination: "local", //paginate the data
+    paginationSize: 30, //allow 30 rows per page of data
+    movableColumns: true, //allow column order to be changed
+    resizableRows: true, //allow row order to be changed
+    initialSort: [ //set the initial sort order of the data
+        {
+            column: "matches",
+            dir: "desc"
+        },
+    ],
+    columns: [ //define the table columns
+        {
+            title: "Matches",
+            field: "matches",
+            editor: "none"
+        },
+        {
+            title: "Accuracy",
+            field: "accuracy",
+            editor: "none"
+        },
+        {
+            title: "Date",
+            field: "date",
+            editor: "none"
+        },
+    ],
+});
 
   function loadTableData(items) {
     const table = document.getElementById("score");
@@ -32,14 +65,11 @@ databaseRef.once('value', function (snapshot) {
   snapshot.forEach(function (childsnapshot) {
       var childKey = childsnapshot.key;
       var childData = childsnapshot.val();
-      const items1 = [{
-          id: childKey,
-          accuracy: childData.accuracy,
-          date: childData.date,
-          score: childData.score
-      }];
-      console.log(snapshot.numChildren()); 
 
-      loadTableData(items1);
+      table.addRow({
+        matches: childData.score,
+        accuracy: childData.accuracy,
+        date: childData.date,
+    });
   })
 })
