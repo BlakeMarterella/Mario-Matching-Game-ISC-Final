@@ -14,9 +14,9 @@ const firebaseConfig = {
   document.getElementById("yourScore").innerHTML += "</br>Accuracy: " + localStorage.getItem("accuracy") + "%";
 
   var table = new Tabulator("#results", {
+    placeholder:"Loading Data",
     layout: "fitData", //fit columns to width of table
     responsiveLayout: "hide", //hide columns that dont fit on the table
-    tooltips: true, //show tool tips on cells
     pagination: "local", //paginate the data
     paginationSize: 15, //allow 30 rows per page of data
     resizableRows: true, //allow row order to be changed
@@ -30,17 +30,17 @@ const firebaseConfig = {
         {
             title: "Matches",
             field: "matches",
-            widthGrow: 1
+            width: 100,
         },
         {
             title: "Accuracy",
             field: "accuracy",
-            widthGrow: 1
+            width: 100,
         },
         {
             title: "Date",
             field: "date",
-            widthGrow: 1
+            width: 100,
         },
     ],
 });
