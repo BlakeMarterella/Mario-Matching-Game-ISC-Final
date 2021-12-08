@@ -140,9 +140,9 @@ function updateAccuracy() {
   }
 }
 
-// 
+// -----------------------
 // Timer
-// 
+// -----------------------
 var timer; 
 var timeLeft = 30;
 
@@ -163,6 +163,7 @@ function start() {
   updateTimer();
 }
 
+// Configure firebase to push the score
 const firebaseConfig = {
   apiKey: "AIzaSyCty60HL2t5UVK_bxpTKJYe7Qr2S9p9xjk",
   authDomain: "isc-mathcing-game.firebaseapp.com",
@@ -179,6 +180,9 @@ firebase.initializeApp(firebaseConfig);
 function gameOver() {
   // This cancels the setInterval, so the updateTimer stops getting called
   clearInterval(timer);
+  //Use localstorage to store the user's score
+  localStorage.setItem("score", matches);
+  localStorage.setItem("accuracy", (matches/totalGuesses * 100).toFixed(1));
   //Redirect to results page
   const dateAndTime = new Date()
  
